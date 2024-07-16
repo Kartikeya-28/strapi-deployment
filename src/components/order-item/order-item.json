@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_order_item_order_items",
+  "info": {
+    "displayName": "orderItem"
+  },
+  "options": {},
+  "attributes": {
+    "quantity": {
+      "type": "integer"
+    },
+    "ad_id": {
+      "type": "integer"
+    },
+    "category": {
+      "type": "enumeration",
+      "enum": [
+        "Cabs",
+        "Buses",
+        "Hoardings",
+        "Railways",
+        "Bins"
+      ]
+    }
+  }
+}

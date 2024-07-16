@@ -1,0 +1,75 @@
+{
+  "kind": "collectionType",
+  "collectionName": "buses",
+  "info": {
+    "singularName": "bus",
+    "pluralName": "buses",
+    "displayName": "Buses"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "heading": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "avgDistancePerDay": {
+      "type": "string"
+    },
+    "category": {
+      "type": "enumeration",
+      "enum": [
+        "Hoardings",
+        "Cabs",
+        "Buses",
+        "Bins",
+        "Railways"
+      ]
+    },
+    "stock": {
+      "type": "boolean"
+    },
+    "ad_id": {
+      "type": "uid",
+      "targetField": "heading"
+    },
+    "location": {
+      "type": "string"
+    },
+    "landmark": {
+      "type": "string"
+    },
+    "advertisingOption": {
+      "type": "string"
+    },
+    "fullCab": {
+      "type": "string"
+    },
+    "seatBack": {
+      "type": "string"
+    },
+    "doorBranding": {
+      "type": "string"
+    },
+    "meshBranding": {
+      "type": "string"
+    },
+    "photosOfAd": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": true
+    },
+    "price": {
+      "type": "decimal"
+    }
+  }
+}

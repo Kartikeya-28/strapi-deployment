@@ -1,0 +1,66 @@
+{
+  "kind": "collectionType",
+  "collectionName": "bins",
+  "info": {
+    "singularName": "bin",
+    "pluralName": "bins",
+    "displayName": "bins"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "heading": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "category": {
+      "type": "enumeration",
+      "enum": [
+        "Hoardings",
+        "Cabs",
+        "Buses",
+        "Bins",
+        "Railways"
+      ]
+    },
+    "inStock": {
+      "type": "boolean"
+    },
+    "ad_id": {
+      "type": "uid",
+      "targetField": "heading"
+    },
+    "location": {
+      "type": "string"
+    },
+    "landmark": {
+      "type": "string"
+    },
+    "price": {
+      "type": "decimal"
+    },
+    "advertisingOption": {
+      "type": "string"
+    },
+    "dustBin": {
+      "type": "string"
+    },
+    "size": {
+      "type": "string"
+    },
+    "photosOfAd": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": true
+    }
+  }
+}

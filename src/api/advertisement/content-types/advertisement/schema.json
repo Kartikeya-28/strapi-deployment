@@ -4,7 +4,8 @@
   "info": {
     "singularName": "advertisement",
     "pluralName": "advertisements",
-    "displayName": "advertisement"
+    "displayName": "advertisement",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -12,14 +13,98 @@
   "pluginOptions": {},
   "attributes": {
     "photosOfAd": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": true
+      ]
+    },
+    "heading": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "inStock": {
+      "type": "boolean"
+    },
+    "ad_id": {
+      "type": "uid",
+      "targetField": "heading"
+    },
+    "advertisingOption": {
+      "type": "string"
+    },
+    "printingCharges": {
+      "type": "decimal"
+    },
+    "mountingCharges": {
+      "type": "decimal"
+    },
+    "rating": {
+      "type": "integer"
+    },
+    "category": {
+      "type": "enumeration",
+      "enum": [
+        "Hoardings",
+        "Cabs",
+        "Buses",
+        "Bins",
+        "Railways"
+      ]
+    },
+    "price": {
+      "type": "decimal"
+    },
+    "location": {
+      "type": "string"
+    },
+    "landmark": {
+      "type": "string"
+    },
+    "size": {
+      "type": "string"
+    },
+    "latitude": {
+      "type": "decimal"
+    },
+    "longitude": {
+      "type": "decimal"
+    },
+    "tokenPrice": {
+      "type": "decimal"
+    },
+    "incomeStartDate": {
+      "type": "date"
+    },
+    "incomePerToken": {
+      "type": "decimal"
+    },
+    "totalTokens": {
+      "type": "integer"
+    },
+    "neighbourhood": {
+      "type": "string"
+    },
+    "installationDate": {
+      "type": "date"
+    },
+    "dimensions": {
+      "type": "string"
+    },
+    "percentageOfTokensSold": {
+      "type": "decimal"
+    },
+    "expectedIncome": {
+      "type": "string"
+    },
+    "rentalDuration": {
+      "type": "string"
     }
   }
 }

@@ -362,36 +362,6 @@ export interface AdminTransferTokenPermission extends Schema.CollectionType {
   };
 }
 
-export interface ApiAdvertisementAdvertisement extends Schema.CollectionType {
-  collectionName: 'advertisements';
-  info: {
-    singularName: 'advertisement';
-    pluralName: 'advertisements';
-    displayName: 'advertisement';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    photosOfAd: Attribute.Media<'images' | 'files' | 'videos' | 'audios', true>;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::advertisement.advertisement',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::advertisement.advertisement',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
 export interface PluginUploadFile extends Schema.CollectionType {
   collectionName: 'files';
   info: {
@@ -818,6 +788,258 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
   };
 }
 
+export interface ApiAdvertisementAdvertisement extends Schema.CollectionType {
+  collectionName: 'advertisements';
+  info: {
+    singularName: 'advertisement';
+    pluralName: 'advertisements';
+    displayName: 'advertisement';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    photosOfAd: Attribute.Media<'images' | 'files' | 'videos' | 'audios', true>;
+    heading: Attribute.String;
+    description: Attribute.Text;
+    inStock: Attribute.Boolean;
+    ad_id: Attribute.UID<'api::advertisement.advertisement', 'heading'>;
+    advertisingOption: Attribute.String;
+    printingCharges: Attribute.Decimal;
+    mountingCharges: Attribute.Decimal;
+    rating: Attribute.Integer;
+    category: Attribute.Enumeration<
+      ['Hoardings', 'Cabs', 'Buses', 'Bins', 'Railways']
+    >;
+    price: Attribute.Decimal;
+    location: Attribute.String;
+    landmark: Attribute.String;
+    size: Attribute.String;
+    latitude: Attribute.Decimal;
+    longitude: Attribute.Decimal;
+    tokenPrice: Attribute.Decimal;
+    incomeStartDate: Attribute.Date;
+    incomePerToken: Attribute.Decimal;
+    totalTokens: Attribute.Integer;
+    neighbourhood: Attribute.String;
+    installationDate: Attribute.Date;
+    dimensions: Attribute.String;
+    percentageOfTokensSold: Attribute.Decimal;
+    expectedIncome: Attribute.String;
+    rentalDuration: Attribute.String;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::advertisement.advertisement',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::advertisement.advertisement',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiBinBin extends Schema.CollectionType {
+  collectionName: 'bins';
+  info: {
+    singularName: 'bin';
+    pluralName: 'bins';
+    displayName: 'bins';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    heading: Attribute.String;
+    description: Attribute.Text;
+    category: Attribute.Enumeration<
+      ['Hoardings', 'Cabs', 'Buses', 'Bins', 'Railways']
+    >;
+    inStock: Attribute.Boolean;
+    ad_id: Attribute.UID<'api::bin.bin', 'heading'>;
+    location: Attribute.String;
+    landmark: Attribute.String;
+    price: Attribute.Decimal;
+    advertisingOption: Attribute.String;
+    dustBin: Attribute.String;
+    size: Attribute.String;
+    photosOfAd: Attribute.Media<'images' | 'files' | 'videos' | 'audios', true>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<'api::bin.bin', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<'api::bin.bin', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+  };
+}
+
+export interface ApiBusBus extends Schema.CollectionType {
+  collectionName: 'buses';
+  info: {
+    singularName: 'bus';
+    pluralName: 'buses';
+    displayName: 'Buses';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    heading: Attribute.String;
+    description: Attribute.Text;
+    avgDistancePerDay: Attribute.String;
+    category: Attribute.Enumeration<
+      ['Hoardings', 'Cabs', 'Buses', 'Bins', 'Railways']
+    >;
+    stock: Attribute.Boolean;
+    ad_id: Attribute.UID<'api::bus.bus', 'heading'>;
+    location: Attribute.String;
+    landmark: Attribute.String;
+    advertisingOption: Attribute.String;
+    fullCab: Attribute.String;
+    seatBack: Attribute.String;
+    doorBranding: Attribute.String;
+    meshBranding: Attribute.String;
+    photosOfAd: Attribute.Media<'images' | 'files' | 'videos' | 'audios', true>;
+    price: Attribute.Decimal;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<'api::bus.bus', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<'api::bus.bus', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+  };
+}
+
+export interface ApiCabCab extends Schema.CollectionType {
+  collectionName: 'cabs';
+  info: {
+    singularName: 'cab';
+    pluralName: 'cabs';
+    displayName: 'Cabs ';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    heading: Attribute.String;
+    description: Attribute.Text;
+    avgDistancePerDay: Attribute.String;
+    category: Attribute.Enumeration<
+      ['Hoardings', 'Cabs', 'Buses', 'Bins', 'Railways']
+    >;
+    stock: Attribute.Boolean;
+    ad_id: Attribute.UID<'api::cab.cab', 'heading'>;
+    location: Attribute.String;
+    landmark: Attribute.String;
+    advertisingOption: Attribute.String;
+    fullCab: Attribute.String;
+    seatBack: Attribute.String;
+    doorBranding: Attribute.String;
+    meshBranding: Attribute.String;
+    photosOfAd: Attribute.Media<'images' | 'files' | 'videos' | 'audios', true>;
+    price: Attribute.Decimal;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<'api::cab.cab', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<'api::cab.cab', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+  };
+}
+
+export interface ApiOrderOrder extends Schema.CollectionType {
+  collectionName: 'orders';
+  info: {
+    singularName: 'order';
+    pluralName: 'orders';
+    displayName: 'Orders';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    orderId: Attribute.UID;
+    email: Attribute.String;
+    orderItem: Attribute.Component<'order-item.order-item', true>;
+    totalPrice: Attribute.Decimal;
+    status: Attribute.Enumeration<
+      ['Order Placed', 'Packaging', 'Out For Delivery', 'Delivered']
+    >;
+    orderedOn: Attribute.DateTime;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::order.order',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::order.order',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiRailwayRailway extends Schema.CollectionType {
+  collectionName: 'railways';
+  info: {
+    singularName: 'railway';
+    pluralName: 'railways';
+    displayName: 'Railways';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    heading: Attribute.String;
+    description: Attribute.Text;
+    size: Attribute.String;
+    category: Attribute.Enumeration<
+      ['Hoardings', 'Cabs', 'Buses', 'Bins', 'Railways']
+    >;
+    inStock: Attribute.Boolean;
+    ad_id: Attribute.UID<'api::railway.railway', 'heading'>;
+    location: Attribute.String;
+    landmark: Attribute.String;
+    advertisingOption: Attribute.String;
+    interiorTrainBranding: Attribute.String;
+    exteriorTrainBranding: Attribute.String;
+    fullTrainBranding: Attribute.String;
+    jingle: Attribute.String;
+    photosOfAd: Attribute.Media<'images' | 'files' | 'videos' | 'audios', true>;
+    price: Attribute.Decimal;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::railway.railway',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::railway.railway',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 declare module '@strapi/types' {
   export module Shared {
     export interface ContentTypes {
@@ -828,7 +1050,6 @@ declare module '@strapi/types' {
       'admin::api-token-permission': AdminApiTokenPermission;
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
-      'api::advertisement.advertisement': ApiAdvertisementAdvertisement;
       'plugin::upload.file': PluginUploadFile;
       'plugin::upload.folder': PluginUploadFolder;
       'plugin::content-releases.release': PluginContentReleasesRelease;
@@ -837,6 +1058,12 @@ declare module '@strapi/types' {
       'plugin::users-permissions.permission': PluginUsersPermissionsPermission;
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
+      'api::advertisement.advertisement': ApiAdvertisementAdvertisement;
+      'api::bin.bin': ApiBinBin;
+      'api::bus.bus': ApiBusBus;
+      'api::cab.cab': ApiCabCab;
+      'api::order.order': ApiOrderOrder;
+      'api::railway.railway': ApiRailwayRailway;
     }
   }
 }
